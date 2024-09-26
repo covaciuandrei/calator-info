@@ -1,13 +1,13 @@
+import 'package:calator_info/core/app_router.gr.dart';
+import 'package:calator_info/core/injection.dart';
+import 'package:calator_info/cubit/introductive/introductive_cubit.dart';
+import 'package:calator_info/cubit/login/login_cubit.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
-import 'package:stockify/core/app_router.gr.dart';
-import 'package:stockify/core/injection.dart';
-import 'package:stockify/cubit/introductive/introductive_cubit.dart';
-import 'package:stockify/cubit/login/login_cubit.dart';
 
 void main() async {
   configureDependencies();
@@ -23,14 +23,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider<IntroductiveCubit>(
-            create: (context) => getIt<IntroductiveCubit>()),
+        BlocProvider<IntroductiveCubit>(create: (context) => getIt<IntroductiveCubit>()),
         BlocProvider<LoginCubit>(create: (context) => getIt<LoginCubit>()),
       ],
       child: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
-        title: 'Stockify',
+        title: 'calator_info',
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -43,8 +42,8 @@ class MyApp extends StatelessWidget {
           if (locale == null) {
             result = supportedLocales.first;
           } else {
-            final Locale? supportedLocale = supportedLocales.firstWhereOrNull(
-                (element) => element.languageCode == locale.languageCode);
+            final Locale? supportedLocale =
+                supportedLocales.firstWhereOrNull((element) => element.languageCode == locale.languageCode);
             result = supportedLocale ?? supportedLocales.first;
           }
 

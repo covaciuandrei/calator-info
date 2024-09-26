@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:calator_info/presentation/pages/introductive/introductive_page.dart';
+import 'package:calator_info/presentation/pages/login/login_page.dart';
 import 'package:injectable/injectable.dart';
-import 'package:stockify/presentation/pages/introductive/introductive_page.dart';
-import 'package:stockify/presentation/pages/login/login_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',

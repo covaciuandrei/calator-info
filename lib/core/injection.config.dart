@@ -26,7 +26,7 @@ _i1.GetIt $initGetIt(
     environment,
     environmentFilter,
   );
-  gh.singleton<_i3.$AppRouter>(_i3.$AppRouter());
+  gh.singleton<_i3.$AppRouter>(() => _i3.$AppRouter());
   gh.factory<_i4.IntroductiveCubit>(() => _i4.IntroductiveCubit());
   gh.factory<_i5.LoginCubit>(() => _i5.LoginCubit());
   return getIt;

@@ -1,7 +1,7 @@
+import 'package:calator_info/cubit/base_cubit.dart';
+import 'package:calator_info/cubit/base_state.dart';
+import 'package:calator_info/cubit/login/login_states.dart';
 import 'package:injectable/injectable.dart';
-import 'package:stockify/cubit/base_cubit.dart';
-import 'package:stockify/cubit/base_state.dart';
-import 'package:stockify/cubit/login/login_states.dart';
 
 @injectable
 class IntroductiveCubit extends BaseCubit {
@@ -9,7 +9,6 @@ class IntroductiveCubit extends BaseCubit {
 
   Future<void> load() async {
     safeEmit(PendingState());
-    Future.delayed(
-        const Duration(seconds: 5), () => safeEmit(LoadingFinishedState()));
+    Future.delayed(const Duration(seconds: 5), () => safeEmit(LoadingFinishedState()));
   }
 }

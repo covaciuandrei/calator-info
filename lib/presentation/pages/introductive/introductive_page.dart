@@ -1,11 +1,10 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:calator_info/core/app_router.gr.dart';
+import 'package:calator_info/cubit/base_state.dart';
+import 'package:calator_info/cubit/introductive/introductive_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:stockify/core/app_router.gr.dart';
-import 'package:stockify/cubit/base_state.dart';
-import 'package:stockify/cubit/introductive/introductive_cubit.dart';
-
 
 class IntroductivePage extends StatefulWidget {
   const IntroductivePage({super.key});
@@ -27,7 +26,7 @@ class _IntroductivePageState extends State<IntroductivePage> {
       listener: (context, state) {},
       builder: (context, state) {
         return Scaffold(
-          appBar: AppBar(title:  Text(AppLocalizations.of(context).appTitle)),
+          appBar: AppBar(title: Text(AppLocalizations.of(context).appTitle)),
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
