@@ -1,7 +1,7 @@
 import 'package:calator_info/core/app_router.gr.dart';
 import 'package:calator_info/core/injection.dart';
 import 'package:calator_info/cubit/introductive/introductive_cubit.dart';
-import 'package:calator_info/cubit/login/login_cubit.dart';
+
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,7 +24,6 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<IntroductiveCubit>(create: (context) => getIt<IntroductiveCubit>()),
-        BlocProvider<LoginCubit>(create: (context) => getIt<LoginCubit>()),
       ],
       child: MaterialApp.router(
         routerDelegate: _appRouter.delegate(),
